@@ -84,14 +84,14 @@ def main():
                 errors = {k: v.data[0] if not isinstance(v, int) else v for k, v in loss_dict.items()}
                 t = (time.time() - iter_start_time) / opt.batchSize
                 visualizer.print_current_errors(epoch, epoch_iter, errors, t)
-                visualizer.plot_current_errors(errors, total_steps)
+                # visualizer.plot_current_errors(errors, total_steps)
 
             ### display output images
-            if save_fake:
-                visuals = OrderedDict([('input_label', util.tensor2label(data['label'][0], opt.label_nc)),
-                                       ('synthesized_image', util.tensor2im(generated.data[0])),
-                                       ('real_image', util.tensor2im(data['image'][0]))])
-                visualizer.display_current_results(visuals, epoch, total_steps)
+            # if save_fake:
+            #     visuals = OrderedDict([('input_label', util.tensor2label(data['label'][0], opt.label_nc)),
+            #                            ('synthesized_image', util.tensor2im(generated.data[0])),
+            #                            ('real_image', util.tensor2im(data['image'][0]))])
+            #     visualizer.display_current_results(visuals, epoch, total_steps)
 
             ### save latest model
             if total_steps % opt.save_latest_freq == save_delta:

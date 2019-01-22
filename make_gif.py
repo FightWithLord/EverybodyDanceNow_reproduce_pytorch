@@ -5,7 +5,7 @@ from pathlib import Path
 from skimage import io
 
 import matplotlib.animation as ani
-from IPython.display import HTML
+# from IPython.display import HTML
 import matplotlib
 
 source_dir = Path('./data/source/test_img')
@@ -46,7 +46,7 @@ ax3 = fig.add_subplot(133)
 anim = ani.FuncAnimation(fig, animate, frames=len(target_label_paths), interval=1000 / 24)
 plt.close()
 
-js_anim = HTML(anim.to_jshtml())
- 
+# js_anim = HTML(anim.to_jshtml())
+
 
 anim.save("output.gif", writer="imagemagick")
